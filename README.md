@@ -67,8 +67,32 @@ CIRCUIT DIAGRAM
 
 
 **PROGRAM** 
- 
-
+~~~
+ int led=4;
+int Sensorport;
+void setup()
+{
+  pinMode(led,OUTPUT);
+  Serial.begin(9600);
+}
+void loop()
+{
+  Sensorport=analogRead(A0);
+  //Serial.print("data=");
+  Serial.println(Sensorport);
+  if(Sensorport>500){
+    digitalWrite(led,HIGH);
+    delay(100);
+    digitalWrite(led,LOW);
+    delay(100);
+  }
+  else{
+    digitalWrite(led,LOW);
+      delay(100);
+  }
+  }
+  
+~~~
 
 
 
